@@ -1,0 +1,53 @@
+﻿@model IEnumerable<hnc_diaz.Models.InfoHnc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Validar Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculaInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoInfo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatriculaInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoInfo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdInfo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdInfo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdInfo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

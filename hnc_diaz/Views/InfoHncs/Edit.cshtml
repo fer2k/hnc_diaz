@@ -1,0 +1,49 @@
+﻿@model hnc_diaz.Models.InfoHnc
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>InfoHnc</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdInfo" />
+            <div class="form-group">
+                <label asp-for="MatriculaInfo" class="control-label"></label>
+                <input asp-for="MatriculaInfo" class="form-control" />
+                <span asp-validation-for="MatriculaInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInfo" class="control-label"></label>
+                <input asp-for="FechaInfo" class="form-control" />
+                <span asp-validation-for="FechaInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraInfo" class="control-label"></label>
+                <input asp-for="HoraInfo" class="form-control" />
+                <span asp-validation-for="HoraInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoInfo" class="control-label"></label>
+                <input asp-for="EstadoInfo" class="form-control" />
+                <span asp-validation-for="EstadoInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
